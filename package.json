@@ -1,0 +1,54 @@
+{
+  "name": "nuxt-app",
+  "type": "module",
+  "version": "0.0.128",
+  "private": true,
+  "scripts": {
+    "build:ncc": "npm run build && npm run ncc && npm run del && npm run rndir",
+    "ncc": "ncc build .output/server/index.mjs -o .output/ncc-server",
+    "del": "rimraf .output/server",
+    "rndir": "renamer --find \"ncc-server\" --replace \"server\" \"./.output/**\"",
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "runProdForWin": "$env:PORT='3455'; node .\\.output\\server\\index.mjs",
+    "release": "release-it"
+  },
+  "dependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.18.1",
+    "@element-plus/nuxt": "^1.1.1",
+    "@nuxtjs/tailwindcss": "^6.13.2",
+    "@release-it/conventional-changelog": "^10.0.1",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/node": "20",
+    "@unocss/eslint-plugin": "^0.60.2",
+    "@vercel/ncc": "^0.38.1",
+    "@vue/devtools-api": "^6.6.3",
+    "dayjs": "^1.11.13",
+    "decimal.js": "^10.4.3",
+    "element-plus": "^2.9.4",
+    "eslint": "^9.3.0",
+    "exceljs": "^4.4.0",
+    "form-data": "^4.0.1",
+    "h3-formidable": "^1.0.0",
+    "imask": "^7.6.1",
+    "jsonwebtoken": "^9.0.2",
+    "nuxt": "3.16.2",
+    "release-it": "^19.0.1",
+    "renamer": "^5.0.1",
+    "rimraf": "^5.0.7",
+    "sass": "^1.85.1",
+    "typescript": "^5.4.5",
+    "vee-validate": "^4.13.1",
+    "vue": "^3.4.38",
+    "vue-imask": "^7.6.1",
+    "vue-router": "^4.4.3"
+  }
+}
+

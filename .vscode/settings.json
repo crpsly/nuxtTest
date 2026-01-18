@@ -1,0 +1,58 @@
+
+{
+  // 設定縮排的空格數量為 2，常見於 JavaScript 和 Vue 項目
+  "editor.tabSize": 2,
+  // 禁用 Prettier 插件，避免與 ESLint 發生衝突
+  "prettier.enable": false,
+  // 禁用在保存文件時自動格式化，格式化需要手動執行
+  "editor.formatOnSave": false,
+  // 保存時的代碼操作配置
+  "editor.codeActionsOnSave": {
+    // 明確要求在保存時執行 ESLint 的自動修復
+    "source.fixAll.eslint": "explicit",
+    // 禁用保存時自動整理導入語句
+    "source.organizeImports": "never"
+  },
+  // 註解掉默認格式化工具為 Prettier，這裡未啟用
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 啟用 ESLint 規則的文檔顯示功能，當 ESLint 報錯時提供相關規則的文檔鏈接
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  // 啟用安靜模式，僅顯示錯誤（不顯示警告）
+  "eslint.quiet": true,
+  // 啟用 ESLint 的格式化功能，使用 ESLint 作為格式化工具
+  "eslint.format.enable": true,
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  // 靜默處理樣式相關的規則，避免在 IDE 中顯示樣式警告，但仍然允許自動修復
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
+  ],
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro"
+  ]
+}

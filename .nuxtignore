@@ -1,0 +1,9 @@
+# 不自動加載清單
+
+pages/**/*.dto.ts
+# pages/**/useEvents.ts
+# pages/**/useApis.ts
+# pages/**/components/*.vue
+
+# 忽略衝突的中間件
+middleware/manifest-route-rule.js
